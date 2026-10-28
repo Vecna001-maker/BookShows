@@ -31,4 +31,11 @@ public class Comment {
     private Instant createdAt;
     @UpdateTimestamp
     private Instant updatedAt;
+
+    public Comment(String description, UUID eventId, UUID parentCommentId, UUID userId) {
+        this.setCommentDescription(description);
+        this.setEventId(eventId);
+        this.setParentCommentId(parentCommentId);
+        this.setUserId(userId);
+    }
 }
