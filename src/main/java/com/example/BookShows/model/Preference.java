@@ -6,13 +6,16 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.Getter;
 import lombok.Setter;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
+import java.time.Instant;
 import java.util.UUID;
 
 @Entity
 @Getter
 @Setter
-@Table(name="user_preferences")
+@Table(name = "user_preferences")
 public class Preference {
     @Id
     @GeneratedValue
@@ -21,4 +24,9 @@ public class Preference {
 
     private UUID eventId;
     private UUID userId;
+
+    @CreationTimestamp
+    Instant createdAt;
+    @UpdateTimestamp
+    Instant updatedAt;
 }
