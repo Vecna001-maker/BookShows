@@ -23,7 +23,7 @@ CREATE TABLE comments (
     comment_description     VARCHAR(256) NOT NULL,
     user_id                 UUID NOT NULL REFERENCES users(user_id) ON DELETE CASCADE,
     event_id                UUID NOT NULL REFERENCES events(event_id) ON DELETE CASCADE,
-    parent_comment_id       UUID DEFAULT NULL REFERENCES comments(comment_id) ON DELETE CASCADE,
+    parent_comment_id       UUID DEFAULT NULL,
     created_at      TIMESTAMPTZ NOT NULL DEFAULT now(),
     updated_at      TIMESTAMPTZ NOT NULL DEFAULT now()
 );
