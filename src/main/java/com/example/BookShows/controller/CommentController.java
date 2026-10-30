@@ -25,7 +25,7 @@ public class CommentController {
 
     @PostMapping("/comment")
     public ResponseEntity<CommentResponse> postComment(@RequestBody CommentRequest commentDetails) {
-        UUID user_id = UUID.fromString("f6081d90-207e-428e-a333-2bd00d65de9b");
+        UUID user_id = UUID.fromString("15b09215-b594-4b1c-a845-da1a1e656c27");
 
 //      Although we are hardcoding here, will later implement
         if(user_id == null) {
